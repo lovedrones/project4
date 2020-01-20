@@ -6,13 +6,14 @@ const {
      signin,
      signout,
      requireSignin
-    } = require('../../controllers/users');
+    } = require('../../controllers/auth');
 
-const { userSignupValidator } = require("../../validator");
+
+// const { userSignupValidator } = require("../../validator");
 
 /*---------- Public Routes ----------*/
 
-router.post("/signup", userSignupValidator, signup);
+router.post("/signup", signup);
 router.post("/signin", signin);
 router.get("/signout", signout);
 
