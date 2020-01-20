@@ -12,21 +12,21 @@ const expressValidator = require('express-validator');
 require("dotenv").config();
 
 //import routes
-const userRoutes = require("./routes/user");
+const userRoutes = require("../routes/api/users");
 // app
 const app = express();
 
 //db
 mongoose
-.connect(press.env.DATABASE, {
+.connect(process.env.DATABASE, {
   useNewUrlParser: true,
   useCreateIndex: true
 })
-.then(( => console.log("DB Connected"));
+.then(() => console.log("DB Connected"));
 
 //middlewares
 app.use(morgan('dev'));
-app.use(bodyParser);
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(expressValidator());
 
