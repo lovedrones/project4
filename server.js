@@ -15,6 +15,7 @@ require('./config/database');
 const authRoutes = require('./routes/api/auth');
 const userRoutes = require("./routes/api/user");
 const categoryRoutes = require("./routes/api/category");
+const productRoutes = require("./routes/api/product");
 
 // app
 const app = express();
@@ -33,6 +34,7 @@ app.use(cors());
 app.use("/api", userRoutes);
 app.use("/api", authRoutes);
 app.use("/api", categoryRoutes);
+app.use("/api", productRoutes);
 // Configure both serve-favicon & static middlewares
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -42,6 +44,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use('/api/auth', require('./routes/api/auth'));
 app.use('/api/category', require('./routes/api/category'));
 app.use('/api/users', require('./routes/api/user'));
+app.use('/api/product', require('./routes/api/product'));
 
 app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
