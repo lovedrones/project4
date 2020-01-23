@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import Layout from '../core/Layout';
-import { signin } from '../auth';
+import { signin, authenticate } from '../auth';
 
 const Signin = () => {
     const [values, setValues] = useState({
@@ -19,23 +19,21 @@ const Signin = () => {
     };
 
     const clickSubmit = event => {
-        event.preventDefault();
-        setValues({ ...values, error: false, loading:true });
-        signin({ email, password }).then(data => {
-            if (data.error) {
-                setValues({ ...values, error: data.error, loading: false });
-            } else {
-                setValues({
-                    ...values,
-                    name: '',
-                    email: '',
-                    password: '',
-                    error: '',
-                    loading: true
-                });
-            }
-        });
-    };
+     event.preventDefault();
+     setValues({ ...values, error: false, loading: true });
+     signin({ email, password }).then(data => {
+         if (data.error) {
+             setValues({ ...values, error: data.error, loading: false });
+         } else {
+             authenticate(data, () => {
+                 setValues({
+                     ...values,
+                     redirectToReferrer: true
+                 });
+             });
+         }
+     });
+ };
 
     const signInForm = () => (
         <form>
