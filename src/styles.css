@@ -1,6 +1,9 @@
 /**
  * border radius
  */
+ body {
+     background-color: #50aacb;
+ }
 
  .btn,
  .jumbotron,
