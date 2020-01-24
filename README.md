@@ -1,7 +1,7 @@
 
 ## Millions To Juan
 
-Juan's e-commerce Shop of miscellaneous goods 
+Juan's e-commerce Shop of miscellaneous goods
 
 ### Technologies Used
 
@@ -9,6 +9,19 @@ Mongo
 Express
 React
 Node
+
+### User Stories
+
+AAU, I would love buy Juan's amazing offerings and receive great deals. 
+
+AAU, images and descriptions of the goods im buying
+
+AAU, search and filters
+
+AAU, personalized user account with cart, wishlist, and order status 
+
+
+
 
 ### WireFrames
 
@@ -18,7 +31,7 @@ Node
 ![alt text](https://i.imgur.com/ghfXyFG.png)
 ![alt text](https://i.imgur.com/T0u91ez.png)
 ![alt text](https://i.imgur.com/5LWZ7C6.png)
-
+![alt text](https://i.imgur.com/zS0JTvH.png)
 
 
 
