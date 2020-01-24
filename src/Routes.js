@@ -9,7 +9,7 @@ import AdminRoute from './auth/AdminRoute';
 import AdminDashboard from './user/AdminDashboard';
 import AddCategory from './admin/AddCategory';
 import AddProduct from './admin/AddProduct';
-
+import ManageProducts from "./admin/ManageProducts"
 
 const Routes = () => {
     return (
@@ -28,6 +28,8 @@ const Routes = () => {
             path="/create/product"
              exact component={AddProduct} 
              />
+            <PrivateRoute path="/admin/products" exact component={ManageProducts} />
+
         </Switch>
     </BrowserRouter>
     );
