@@ -11,7 +11,7 @@ const Dashboard = () => {
     const {
         user: { _id, name, email, role }
     } = isAuthenticated();
-    const token = isAuthenticated().token;
+    // const token = isAuthenticated().token;
 
     // const init = (userId, token) => {
     //     getPurchaseHistory(userId, token).then(data => {

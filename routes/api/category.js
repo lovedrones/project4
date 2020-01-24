@@ -9,7 +9,7 @@ const { userById } = require("../../controllers/user");
 /*---------- Public Routes ----------*/
 
 router.get('/category/:categoryId', read)
-router.post("/category/create/:userId", requireSignin, isAuth, isAdmin, create);
+router.post("/category/create/:userId", requireSignin, create);
 router.put("/category/:categoryId/:userId", requireSignin, isAuth, isAdmin, update);
 router.delete("/category/:categoryId/:userId", requireSignin, isAuth, isAdmin, remove);
 router.get('/categories', list)

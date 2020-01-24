@@ -8,9 +8,9 @@ const { userById } = require("../../controllers/user");
 /*---------- Public Routes ----------*/
 router.get('/product/:productId', read)
 
-router.post("/product/create/:userId", requireSignin, isAuth, isAdmin, create );
-router.delete('/product/:productId/:userId', requireSignin, isAuth, isAdmin, remove );
-router.put('/product/:productId/:userId', requireSignin, isAuth, isAdmin, update );
+router.post("/product/create/:userId", requireSignin, create );
+router.delete('/product/:productId/:userId', requireSignin, remove );
+router.put('/product/:productId/:userId', requireSignin, update );
 router.get('/products', list);
 router.get('/products/related/:productId',listRelated);
 router.get('/products/categories', listCategories);
